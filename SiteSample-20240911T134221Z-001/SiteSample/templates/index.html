@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block content %}
+<main>
+
+  <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="../../static/images/PSA Rear Lat.jpg" class="d-block w-100" alt="First Slide">
+        <div class="container">
+          <div class="carousel-caption text-start container" style="z-index: 10; position: absolute; bottom: 50px; right: 50px; max-width: 90%;">
+            <h1 style="color: white">Voluptuous Bat Lats</h1>
+            <p style="color: white">Built by Dumbbell Pullovers and Thick Rows.</p>
+            <p><a class="btn btn-lg btn-primary" onmouseover="this.style.backgroundColor='black';" onmouseout="this.style.backgroundColor='#ffc107';" href="#cmark">Take A Peek</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active" id='batlats'>
+        <img src="../../static/images/Glasses Bicep.png" class="d-block w-100" alt="Second Slide">
+        <div class="container">
+          <div class="carousel-caption" style="bottom: 30px;">
+            <h1 style="color: white">Mid-Crunch Bicep Mogging</h1>
+            <p style="color: white">Curls, Curls, and more Curls!</p>
+            <p><a class="btn btn-lg btn-primary" onmouseover="this.style.backgroundColor='black';" onmouseout="this.style.backgroundColor='#ffc107';" href="{{ url_for('faqs') }}">Learn more</a></p>
+          </div>
+        </div>
+
+      </div>
+      <div class="carousel-item">
+        <img src="../../static/images/Mirror Pose.jpg" class="d-block w-100" alt="Third Slide">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1 style="color: white">My Most Aesthetic Shot</h1>
+            <p style="color: white">Ahh, the glory days. Deep in the cut but still succulent and dense...</p>
+            <p><a class="btn btn-lg btn-primary" onmouseover="this.style.backgroundColor='black';" onmouseout="this.style.backgroundColor='#ffc107';" href="{{ url_for('faqs') }}">How'd I Do It?</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+  <!-- Marketing messaging and featurettes
+  ================================================== -->
+  <!-- Wrap the rest of the page in another container to center all the content. -->
+
+  <div id="cmark" class="container marketing">
+
+    <!-- Three columns of text below the carousel -->
+    <div class="row">
+      <div class="col-lg-4">
+        <img class="rounded-circle" width="140" height="140" src="../static/images/Bench.png">
+        <h2 class="fw-normal">Bench Activities</h2>
+        <p>Watch me build some seriously rotund and JUICY pecs!</p>
+        <p><a class="btn btn-secondary" href="{{ url_for('chest') }}">Witness Greatness</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="../static/images/Squat.png" class="rounded-circle" width="140" height="140">
+        <h2 class="fw-normal">Leg Activities</h2>
+        <p>Horse legs? Yes Please!</p>
+        <p><a class="btn btn-secondary" href="{{ url_for('legs') }}">Thick Trunks</a></p>
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img class="rounded-circle" width="140" height="140" src="../static/images/Rows.png">
+        <h2 class="fw-normal">Back Activities</h2>
+        <p>Who doesn't want a monster back?</p>
+        <p><a class="btn btn-secondary" href="{{ url_for('back') }}">Take Sacrament</a></p>
+      </div><!-- /.col-lg-4 -->
+    </div><!-- /.row -->
+
+
+    <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Please ignore the low quality <span class="text-body-secondary">    I took a Python course I am uneqquipped for front end.</span></h2>
+        <p class="lead">Still, check out that side chest. Cool, right?</p>
+      </div>
+      <div class="col-md-5">
+        <img src="/static/images/Side Chest.jpg" style="height: 100%; width: 85%">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Gotta stretch the hips<span class="text-body-secondary">  to prepare for a Big Squat</span></h2>
+        <p class="lead">Tricep looked meaty while stretching. iPhone camera is a cruel mistress!</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="../static/images/Stretch Trie.jpg" style="height: 100%; width: 85%;">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">And lastly, this one  <span class="text-body-secondary">   Around 2 years ago.</span></h2>
+        <p class="lead">I really need to get some high-res photos of my youthful physique! Delts looked good, though.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="../static/images/PSA Back Double.jpg" style="height: 100%; width: 85%;">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <!-- /END THE FEATURETTES -->
+
+  </div><!-- /.container -->
+
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-end"><a href="#">Back to top</a></p>
+    <p>© Chris Cottone 2024 · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+  </footer>
+</main>
+{% endblock %}
