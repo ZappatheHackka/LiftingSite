@@ -5,7 +5,6 @@ from flask_bootstrap import Bootstrap5
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, EmailField, SubmitField
 from wtforms.validators import DataRequired
-from smtplib import SMTP
 import requests
 import uuid
 
@@ -122,26 +121,28 @@ def todo():
             # Edit an existing todo
         elif action == 'edit' and todo_id:
             command = [{
-                'type': generate_uuid(),
+                'type': 'item_update',
                 'uuid': generate_uuid(),
                 'args': {'id': int(todo_id), 'content': content}
             }]
 
             # Delete a todo
         elif action == 'delete' and todo_id:
+            print(todo_id)
             command = [{
                 'type': 'item_delete',
                 'uuid': generate_uuid(),
-                'args': {'ids': [int(todo_id)]}
+                'args': {'id': int(todo_id)}
             }]
 
 
             # Complete a todo
         elif action == 'complete' and todo_id:
+            print(todo_id)
             command = [{
                 'type': 'item_complete',
                 'uuid': generate_uuid(),
-                'args': {'ids': [int(todo_id)]}
+                'args': {'id': int(todo_id)}
             }]
 
             # Sync with Todoist
