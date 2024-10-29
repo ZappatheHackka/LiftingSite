@@ -9,7 +9,7 @@ import requests
 import uuid
 
 
-TODO_API = os.environ['TODO_API']
+TODO_API = #Your todoist API Key
 TODO_ENDPOINT = "https://api.todoist.com/sync/v9/sync"
 
 
