@@ -2,3 +2,4 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
 drive-download-20240912T204817Z-001.zip filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
+SiteSample-20240911T134221Z-001/SiteSample/static/drive-download-20240912T204817Z-001.zip filter=lfs diff=lfs merge=lfs -text
