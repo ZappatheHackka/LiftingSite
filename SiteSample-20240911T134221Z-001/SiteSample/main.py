@@ -39,13 +39,6 @@ def generate_uuid():
     return str(uuid.uuid4())
 
 
-class SendLove(FlaskForm):
-    subject = StringField("The Subject of Your Love..", validators=[DataRequired()], render_kw={'style': 'width: 100ch'})
-    message = TextAreaField("The contents of your heart...", validators=[DataRequired()], render_kw={'style': 'width: 200ch'})
-    email = EmailField("Where I can return your affection...", validators=[DataRequired()], render_kw={'style': 'width: 100ch'})
-    submit = SubmitField('Send Love xoxo')
-
-
 SECRET_KEY = os.urandom(32)
 app = Flask(__name__)
 
@@ -63,27 +56,6 @@ def home():
 @app.route('/FAQs')
 def faqs():
     return render_template('faqs.html')
-
-# TODO Add email page with FLask WTForm -- UPDATE: DEPRECATED
-@app.route('/singsingsing', methods=['GET', 'POST'])
-def praises():
-    form = SendLove()
-    if form.validate_on_submit():
-        try:
-            with smtplib.SMTP('mail.idhoops.com', port=587) as server:
-                server.starttls()
-                # server.login(user='chris@idhoops.com', password=PASS)
-                server.sendmail(from_addr='chris@idhoops.com', to_addrs='johncena2930@yahoo.com',
-                                msg=f"\r\nSubject: {form.subject.data}\r\n\r\n"
-                                    f"{form.message.data}\r\n\r\n"
-                                    f"Sent from: {form.email.data}")
-            flash("Your message has been sent. Please prepare a burnt offering for a quicker reply.")
-        except Exception as e:
-            flash(f"An error occurred: {e}")
-        return render_template('praises.html', form=form)
-
-    else:
-        return render_template('praises.html', form=form)
 
 @app.route('/feats')
 def feat():
@@ -159,10 +131,6 @@ def todo():
         todos = data.get('items', [])
         return render_template('todo.html', todos=todos)
 
-
-
-# TODO: Add some kind of API integration w/ Todoist API
-# TODO: Maybe add a shop type thing (what does Angela even mean by that???)
 
 if __name__ == "__main__":
     app.run(debug=True)
