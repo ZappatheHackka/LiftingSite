@@ -135,7 +135,6 @@ def todo():
                 'args': {'id': int(todo_id)}
             }]
 
-
             # Complete a todo
         elif action == 'complete' and todo_id:
             print(todo_id)
